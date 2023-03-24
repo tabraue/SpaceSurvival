@@ -1,0 +1,32 @@
+div {
+    height: 90vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+td {
+    background-color: rgb(232, 238, 232);
+    width: 30px;
+    height: 50px;
+}
+
+.goal>td {
+    background-color: black;
+}
+
+.support>td {
+    background-color: rgb(102, 102, 221);
+}
+
+.safe>td {
+    background-color: rgb(93, 168, 93);
+}
+
+.collision>td {
+    background-color: pink;
+}
+
+.home>td {
+    background-color: rgb(240, 240, 131);
+}
