@@ -1,76 +1,130 @@
-
 let allien = {
     pos: {
         x: 9,
         y: 16
     },
-    direction: "left",
+    direction: '',
 }
 
+let cell = {
+    pos: {
+        x: 9,
+        y: 16
+    },
+}
 
-
-//document.getElementById()
+//busca la celda que queremos y la "pinta"
 function drawAllien() {
-    var allienCell = document.querySelector(`.row${allien.pos.y} .col${allien.pos.x}`)
-    console.log(allienCell)
+    //pinta
+    let allienCell = document.querySelector(`.row${allien.pos.y} .col${allien.pos.x}`)
     allienCell.classList.add('allien')
+
+}
+
+function clearAllien(){   
+    //despintar
+    let emptyCell = document.querySelector(`.row${cell.pos.y} .col${cell.pos.x}`)
+    emptyCell.classList.remove('allien')
+    emptyCell.classList.add('td')
 }
 
 
-/*
 
 
-    switch(allien.direction){
-        case'left': allien.pos.x = 8
-        break;
-        case 'right': allien.pos.x ++
-        break;
-        case 'up': allien.pos.y--
-        break;
-        case 'down': allien.pos.y++
-        break;
-
-*/
-
-
-function moveAllien () {
-
-    switch(allien.direction){
-        case "left":
-            allien.pos.x--;
-
-        break;
-
-
-
-
-    }
-
-/*
-    if(allien.direction == "right" && allien.pos.x < 17){
-        allien.pos.x = 10
-    }
-    */
- 
-}
-
+// function moveAllien (move) {
+//     allien.direction = move;
+//     switch(move){
+//         case "left":
+//             allien.pos.x--
+//             drawAllien()
+//         break;
+//         case 'right': 
+//             allien.pos.x ++
+//             drawAllien()
+//         break;
+//         case 'up': 
+//             allien.pos.y--
+//             drawAllien()
+//         break;
+//         case 'down': 
+//             allien.pos.y++
+//             drawAllien()
+//         break;
     
+//     }
+
+// }
+
+
 //DETECTA MOVIVIMIENTO CON FLECHAS
+// window.addEventListener('keydown', function (event) {
+//     console.log(event.code)
+//     switch (event.code) {        
+//         case "ArrowLeft":
+//            // allien.direction = "left"
+//             moveAllien('left')
+//             break;
+//         case "ArrowRight":
+//             allien.direction = "right"
+//             break;
+//         case "ArrowUp":
+//             allien.direction = "up"
+//             break;
+//         case "ArrowDown":
+//             allien.direction = "down"
+//             break;
+//     }
+// })
+
+//captura evento pulsar tecla & llama a la función moveAllien pasándole por parámetro el evento capturado
 window.addEventListener('keydown', function (event) {
-    switch (event.code) {
-        case "ArrowLeft":
-            allien.direction = "left"
-            break;
-        case "ArrowRight":
-            allien.direction = "right"
-            break;
-        case "ArrowUp":
-            allien.direction = "up"
-            break;
-        case "ArrowDown":
-            allien.direction = "down"
-            break;
-    }
+    moveAllien(event.code)
 })
+
+function moveAllien (move) {
+
+    let limit = document.querySelectorAll('td')
+    console.log(limit.length)
+
+
+   // if(allien.pos.x > 1 || allien.pos.x < 17)
+
+    switch(move){
+        case "ArrowLeft": 
+                //izq actualiza x -1
+                allien.pos.x--
+                //pinta alien en posicion donde se mueve
+                drawAllien()
+                //recoge posicion x e y para despintar alien
+                cell.pos.x = allien.pos.x+1;
+                cell.pos.y = allien.pos.y;
+                clearAllien() 
+            
+        break;
+        case "ArrowRight": 
+            allien.pos.x++
+            drawAllien()
+            cell.pos.x = allien.pos.x-1;
+            cell.pos.y = allien.pos.y;
+            clearAllien()  
+        break;
+        case "ArrowUp": 
+            allien.pos.y--
+            drawAllien()
+            cell.pos.y = allien.pos.y+1;
+            cell.pos.x = allien.pos.x;
+            clearAllien()
+        break;
+        case "ArrowDown": 
+            allien.pos.y++
+            drawAllien()
+            cell.pos.y = allien.pos.y-1;
+            cell.pos.x = allien.pos.x;
+            clearAllien()
+        break;
+    
+    }
+
+}
+
 drawAllien()
-moveAllien()
