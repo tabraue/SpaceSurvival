@@ -7,28 +7,24 @@ let allien = {
 
 let cell = {
     pos: {
-        x: 9,
-        y: 16
+
     },
 }
 
 
-
-
-
-
+// ****** Variables & Methods call ****** 
 // const limites B L & R
-const limitBottom= document.querySelectorAll('.body>tr').length// limite dcha == 16
-const limitLeft = 1 // limite izq == 1
-const limitRight = document.querySelectorAll('.row1>td').length // limite abajo == 17
+const limitBottom = document.querySelectorAll('.body>tr').length; // limite dcha == 16
+const limitLeft = 1; // limite izq == 1
+const limitRight = document.querySelectorAll('.row1>td').length; // limite abajo == 17
 
-let shipCell = '';
-let shipCell2 = '' ;
-let shipCell3 = '';
+// variable
+let spaceShip = [];
 
 
 drawAllien()
-drawSpaceShip()
+drawSpaceShip(8)
+
 
 
 
@@ -46,29 +42,51 @@ function clearAllien(){
     emptyCell.classList.add('td')
 }
 
-function drawSpaceShip(){
 
-    let collisionRow = Math.ceil( Math.random() * (13 - 9) + 9);
-    let collisionCol = Math.ceil( Math.random() * (17 - 1) + 1);
+function drawSpaceShip(qty){
+    let rowFirstCell;
+    let colFirstCell;
+    let cellSpaceShip;
 
-    shipCell = document.querySelector('.row'+collisionRow+' .col'+ collisionCol)
-    shipCell2 = document.querySelector('.row'+collisionRow+' .col'+ (collisionCol+1))
-    shipCell3 = document.querySelector('.row'+collisionRow+' .col'+ (collisionCol+2))
+    for (let i = 0; i < qty; i++){
 
-    shipCell.classList.remove('td')
-    shipCell.classList.add("spaceShip")
-    shipCell2.classList.remove('td')
-    shipCell2.classList.add("spaceShip")    
-    shipCell3.classList.remove('td')
-    shipCell3.classList.add("spaceShip")
+        if(spaceShip.length == 0){
+            let collisionRow = Math.ceil( Math.random() * (13 - 9) + 9);
+            let collisionCol = Math.ceil( Math.random() * (17 - 1) + 1);
+            
+            cellSpaceShip = new CellShip(collisionCol,collisionRow)
+
+        }else{
+            rowFirstCell = spaceShip[0].y;
+            colFirstCell = spaceShip[0].x-i;
+            
+            cellSpaceShip = new CellShip(colFirstCell,rowFirstCell)
+        }
+
+        cellSpaceShip.drawCell()
+        spaceShip.push(cellSpaceShip)
+    }
 }
+
 
 function moveSpaceShip(){
-    
+
+    let speed = 500;
+    cellShip.pos[0]
+    pepe()
+
 
 
 }
 
+function pepe(){
+
+    cellShip.pos[0].x = cellShip.pos[2].x+1
+    console.log(cellShip.pos[0].x)
+    console.log(cellShip.pos[2].x+1)
+
+
+}
 
 
 //DETECTA MOVIVIMIENTO CON FLECHAS
