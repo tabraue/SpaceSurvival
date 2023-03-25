@@ -3,7 +3,6 @@ let allien = {
         x: 9,
         y: 16
     },
-    direction: '',
 }
 
 let cell = {
@@ -13,47 +12,25 @@ let cell = {
     },
 }
 
-//busca la celda que queremos y la "pinta"
+// const limites B L & R
+const limitBottom= document.querySelectorAll('.body>tr').length// limite dcha == 16
+const limitLeft = 1 // limite izq == 1
+const limitRight = document.querySelectorAll('.row1>td').length // limite abajo == 17
+
 function drawAllien() {
-    //pinta
+    //pinta //busca la celda que queremos y la "pinta"
     let allienCell = document.querySelector(`.row${allien.pos.y} .col${allien.pos.x}`)
     allienCell.classList.add('allien')
 
 }
 
 function clearAllien(){   
-    //despintar
+    //despintar //busca la celda que queremos y la "despinta"
     let emptyCell = document.querySelector(`.row${cell.pos.y} .col${cell.pos.x}`)
     emptyCell.classList.remove('allien')
     emptyCell.classList.add('td')
 }
 
-
-
-
-// function moveAllien (move) {
-//     allien.direction = move;
-//     switch(move){
-//         case "left":
-//             allien.pos.x--
-//             drawAllien()
-//         break;
-//         case 'right': 
-//             allien.pos.x ++
-//             drawAllien()
-//         break;
-//         case 'up': 
-//             allien.pos.y--
-//             drawAllien()
-//         break;
-//         case 'down': 
-//             allien.pos.y++
-//             drawAllien()
-//         break;
-    
-//     }
-
-// }
 
 
 //DETECTA MOVIVIMIENTO CON FLECHAS
@@ -82,31 +59,28 @@ window.addEventListener('keydown', function (event) {
 })
 
 function moveAllien (move) {
-
-    let limit = document.querySelectorAll('td')
-    console.log(limit.length)
-
-
-   // if(allien.pos.x > 1 || allien.pos.x < 17)
-
     switch(move){
         case "ArrowLeft": 
+            //if controla los limites de los bordes
+            if(allien.pos.x > limitLeft){
                 //izq actualiza x -1
                 allien.pos.x--
                 //pinta alien en posicion donde se mueve
                 drawAllien()
-                //recoge posicion x e y para despintar alien
+                //recoge posicion x & y para despintar alien
                 cell.pos.x = allien.pos.x+1;
                 cell.pos.y = allien.pos.y;
                 clearAllien() 
-            
+            }
         break;
         case "ArrowRight": 
-            allien.pos.x++
-            drawAllien()
-            cell.pos.x = allien.pos.x-1;
-            cell.pos.y = allien.pos.y;
-            clearAllien()  
+            if(allien.pos.x < limitRight){
+                allien.pos.x++
+                drawAllien()
+                cell.pos.x = allien.pos.x-1;
+                cell.pos.y = allien.pos.y;
+                clearAllien()
+            }
         break;
         case "ArrowUp": 
             allien.pos.y--
@@ -115,16 +89,16 @@ function moveAllien (move) {
             cell.pos.x = allien.pos.x;
             clearAllien()
         break;
-        case "ArrowDown": 
-            allien.pos.y++
-            drawAllien()
-            cell.pos.y = allien.pos.y-1;
-            cell.pos.x = allien.pos.x;
-            clearAllien()
+        case "ArrowDown":
+            if(allien.pos.y < limitBottom){
+                allien.pos.y++
+                drawAllien()
+                cell.pos.y = allien.pos.y-1;
+                cell.pos.x = allien.pos.x;
+                clearAllien()
+            }
         break;
-    
     }
-
 }
 
 drawAllien()
