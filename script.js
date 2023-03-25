@@ -12,10 +12,25 @@ let cell = {
     },
 }
 
+
+
+
+
+
 // const limites B L & R
 const limitBottom= document.querySelectorAll('.body>tr').length// limite dcha == 16
 const limitLeft = 1 // limite izq == 1
 const limitRight = document.querySelectorAll('.row1>td').length // limite abajo == 17
+
+let shipCell = '';
+let shipCell2 = '' ;
+let shipCell3 = '';
+
+
+drawAllien()
+drawSpaceShip()
+
+
 
 function drawAllien() {
     //pinta //busca la celda que queremos y la "pinta"
@@ -29,6 +44,29 @@ function clearAllien(){
     let emptyCell = document.querySelector(`.row${cell.pos.y} .col${cell.pos.x}`)
     emptyCell.classList.remove('allien')
     emptyCell.classList.add('td')
+}
+
+function drawSpaceShip(){
+
+    let collisionRow = Math.ceil( Math.random() * (13 - 9) + 9);
+    let collisionCol = Math.ceil( Math.random() * (17 - 1) + 1);
+
+    shipCell = document.querySelector('.row'+collisionRow+' .col'+ collisionCol)
+    shipCell2 = document.querySelector('.row'+collisionRow+' .col'+ (collisionCol+1))
+    shipCell3 = document.querySelector('.row'+collisionRow+' .col'+ (collisionCol+2))
+
+    shipCell.classList.remove('td')
+    shipCell.classList.add("spaceShip")
+    shipCell2.classList.remove('td')
+    shipCell2.classList.add("spaceShip")    
+    shipCell3.classList.remove('td')
+    shipCell3.classList.add("spaceShip")
+}
+
+function moveSpaceShip(){
+    
+
+
 }
 
 
@@ -101,4 +139,3 @@ function moveAllien (move) {
     }
 }
 
-drawAllien()
