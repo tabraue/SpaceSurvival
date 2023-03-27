@@ -12,6 +12,7 @@ let notalien = {
 }
 
 
+
 // ****** Variables & Methods call ****** 
 // const limites B L & R
 const limitBottom = document.querySelectorAll('.body>tr').length; // limite abajo == 17
@@ -36,6 +37,10 @@ let cellSuppo = undefined;
 
 
 game();
+function stop (){
+    alert ("GAMEOVER")
+}
+
 
 //captura evento pulsar tecla & llama a la función moveAllien pasándole por parámetro el evento capturado
 window.addEventListener('keydown', function (event) {

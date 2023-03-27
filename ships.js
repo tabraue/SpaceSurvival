@@ -72,8 +72,11 @@ function moveSpaceShip(j, i) {
     arrships[j].spaceShip[i] = cell;
 
     //  controla colision
+
     if (cell.x == alien.pos.x && cell.y == alien.pos.y) {
-        alert("ko") // PENDIENTE MENSAJE GAME OVER
+        stop()
+
+       
     }
     
 

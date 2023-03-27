@@ -1,6 +1,11 @@
-div {
-    height: 90vh;
-    display: grid;
+*{box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   
+}
+.juego {
+    height: 90%;
+    display: flex;
     align-items: center;
     justify-content: center;
     
@@ -30,8 +35,13 @@ td {
     background-color: rgba(127, 255, 212, 0.767);
 }
 
-.suppoAlienCell {
-    background-image: url("img/alien.png");
-        background-repeat: no-repeat;
-        align-items: center;
+.start{
+    background-image: url("./img/68m.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    border-color: blueviolet solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
