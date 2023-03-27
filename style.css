@@ -25,3 +25,7 @@ td {
 .spaceShip{
     background-color: rgb(82, 23, 124);
 }
+
+.spaceSupporter{
+    background-color: rgba(127, 255, 212, 0.767);
+}
