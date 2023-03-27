@@ -8,14 +8,14 @@ function MotherSupporter(spaceSupporter) {
 
 //función constructora de celdas para las naves espaciales
 let supporterCell = '';
-
+let suppoAlienCell;
 
 function CellSupporter(x, y) {
     this.x = x;
     this.y = y;
 };
 
-CellSupporter.prototype.drawCell = function () {
+CellSupporter.prototype.drawCellSupp = function () {
 
     supporterCell = document.querySelector('.row' + this.y + ' .col' + this.x)
     supporterCell.classList.remove('td')
@@ -24,14 +24,23 @@ CellSupporter.prototype.drawCell = function () {
 
 };
 
-CellSupporter.prototype.undrawCell = function () {
+CellSupporter.prototype.undrawCellSupp = function () {
 
     supporterCell = document.querySelector('.row' + this.y + ' .col' + this.x)
-
-    supporterCell.classList.remove("spaceSupporter")
     supporterCell.classList.add("td")
+    supporterCell.classList.remove("spaceSupporter")
+   
 
-    //supporterCell.classList.toggle("td")
+   // supporterCell.classList.toggle("td")
     //supporterCell.classList.toggle("spaceSupporter")
 
 };
+/*
+CellSupporter.prototype.drawAlienCell = function() {
+    suppoAlienCell = document.querySelector('.row' + this.y + ' .col' + this.x)
+
+    suppoAlienCell.classList.remove("spaceSupporter")
+    suppoAlienCell.classList.add("suppoAlienCell")
+
+}
+*/

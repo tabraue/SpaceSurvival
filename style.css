@@ -29,3 +29,9 @@ td {
 .spaceSupporter{
     background-color: rgba(127, 255, 212, 0.767);
 }
+
+.suppoAlienCell {
+    background-image: url("img/alien.png");
+        background-repeat: no-repeat;
+        align-items: center;
+}

@@ -26,6 +26,14 @@ let timein = 0;
 let time;
 let cell = undefined;
 
+//variables para cometas zona support
+let minSupport = 4;
+let spaceSupporter = [];
+let arrcomets = [];
+let timeInSuppo;
+let cellSuppo = undefined;
+
+
 
 game();
 

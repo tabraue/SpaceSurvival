@@ -9,4 +9,4 @@ function clearAllien() {
     let emptyCell = document.querySelector(`.row${notalien.pos.y} .col${notalien.pos.x}`)
     emptyCell.classList.remove('allien')
     emptyCell.classList.add('td')
-}
+} 
