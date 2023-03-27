@@ -1,4 +1,4 @@
-let alien = {
+/*let alien = {
     pos: {
         x: 9,
         y: 16
@@ -11,7 +11,7 @@ let notalien = {
     },
 }
 
-
+*/
 
 // ****** Variables & Methods call ****** 
 // const limites B L & R
@@ -23,21 +23,25 @@ const limitRight = document.querySelectorAll('.row1>td').length; // limite dcha 
 let spaceShip = [];
 let arrships = [];
 let minShip = 9;
-let timein = 0;
-let time;
+let timein = 0; // interval
+let time; // timeout
 let cell = undefined;
 
-//variables para cometas zona support
-let minSupport = 4;
-let spaceSupporter = [];
-let arrcomets = [];
-let timeInSuppo;
-let cellSuppo = undefined;
 
 
+//creación objetos alien (pintar y despintar)
+let alien = new Alien(9,16)
+let notalien = new NotAlien(0,0)
 
 game();
+
 function stop (){
+
+    //window.removeEventListener()   ?????????????????????
+    clearInterval(timein)
+    clearInterval(timeInSuppo)
+    clearTimeout(time)
+    clearTimeout(timeSuppo)
     alert ("GAMEOVER")
 }
 
@@ -51,40 +55,40 @@ function moveAllien (move) {
     switch(move){
         case "ArrowLeft": 
             //if controla los limites de los bordes
-            if(alien.pos.x > limitLeft){
+            if(alien.x > limitLeft){
                 //izq actualiza x -1
-                alien.pos.x--;
+                alien.x--;
                 //pinta alien en posicion donde se mueve
-                drawAllien()
+                alien.drawAllien()
                 //recoge posicion x & y para despintar alien
-                notalien.pos.x = alien.pos.x+1;
-                notalien.pos.y = alien.pos.y;
-                clearAllien() 
+                notalien.x = alien.x+1;
+                notalien.y = alien.y;
+                notalien.clearAllien() 
             }
         break;
         case "ArrowRight": 
-            if(alien.pos.x < limitRight){
-                alien.pos.x++;
-                drawAllien()
-                notalien.pos.x = alien.pos.x-1;
-                notalien.pos.y = alien.pos.y;
-                clearAllien()
+            if(alien.x < limitRight){
+                alien.x++;
+                alien.drawAllien()
+                notalien.x = alien.x-1;
+                notalien.y = alien.y;
+                notalien.clearAllien()
             }
         break;
         case "ArrowUp": 
-            alien.pos.y--;
-            drawAllien()
-            notalien.pos.y = alien.pos.y+1;
-            notalien.pos.x = alien.pos.x;
-            clearAllien()
+            alien.y--;
+            alien.drawAllien()
+            notalien.y = alien.y+1;
+            notalien.x = alien.x;
+            notalien.clearAllien()
         break;
         case "ArrowDown":
-            if(alien.pos.y < limitBottom){
-                alien.pos.y++;
-                drawAllien()
-                notalien.pos.y = alien.pos.y-1;
-                notalien.pos.x = alien.pos.x;
-                clearAllien()
+            if(alien.y < limitBottom){
+                alien.y++;
+                alien.drawAllien()
+                notalien.y = alien.y-1;
+                notalien.x = alien.x;
+                notalien.clearAllien()
             }
         break;
     }

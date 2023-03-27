@@ -36,7 +36,7 @@ td {
 }
 
 .start{
-    background-image: url("./img/68m.gif");
+   /* background-image: url("./img/68m.gif");*/
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;

@@ -1,63 +1,68 @@
+//variables para cometas zona support
+
+let spaceSupporter = [];
+let arrcomets = [];
+let timeInSuppo; // interval
+let timeSuppo; // timeout
+let cellSuppo = undefined;
 
 
 
 
-// dibuja elems en zona colisión: cantidad det de 2 y 4 celdas
-function drawAllSupports(qty, rockOrShip) {
+
+// dibuja elems en zona support: cantidad det de X celdas
+function drawAllSupports(qty, rockOrShip, minSupport) {
     for (let i = 1; i <= qty; i++) {
-        drawSupporters(rockOrShip)
+        drawSupporters(rockOrShip, minSupport)
     }
 }
 
-//crea 1 nave
-
-function drawSupporters(qty) {
+//crea 1 cometa
+function drawSupporters(qty, minSupport) {
     let rowFirstCellS;
     let colFirstCellS;
     let miqueridocellsuportador;
     let supporterRow;
     let supporterCol;
 
+
     for (let i = 0; i < qty; i++) {
 
         if (spaceSupporter.length == 0) {
+           
             //de forma random escoge una columna entre la 1 y 17
-            supporterCol = Math.ceil(Math.random() * ((17 - 1) + 1) + 1);
+            supporterCol = Math.floor(Math.random() * ((17 - 1) + 1) + 1);
             if (supporterCol <= 4) {
                 supporterCol += 4
             }
             supporterRow = minSupport;
-            minSupport++;
-
+    
             miqueridocellsuportador = new CellSupporter(supporterCol, supporterRow)
-
-        } else {
+    
+         } else {
             rowFirstCellS = spaceSupporter[0].y;
             colFirstCellS = spaceSupporter[0].x - i;
-
+    
             miqueridocellsuportador = new CellSupporter(colFirstCellS, rowFirstCellS)
         }
-
+    
         miqueridocellsuportador.drawCellSupp()
         spaceSupporter.push(miqueridocellsuportador)
+        
+
+        
     }
 
     arrcomets.push(new MotherSupporter(spaceSupporter))
     spaceSupporter = [];
+
 }
 
-
-function moveSupporters(j, i) {
-
-    // console.log(tempShip.spaceSupporter[0].y) // -> se obtiene coordenada exacta y
-
-    // creamos un objeto Cellship que tiene las dos coordenadas, despintamos y pintamos
+    // creamos un objeto CellSupporter que tiene las dos coordenadas, despintamos y pintamos
     // actualizando la posicion de X aumentadole (+1)
     // Cuando una celda se mueve tenemos que guardar
-    // en el array de naves la nueva posicion de esta celda
-
-
-
+    // en el array de cometas la nueva posicion de esta celda
+function moveSupporters(j, i) {
 
     cellSuppo = new CellSupporter(arrcomets[j].spaceSupporter[i].x, arrcomets[j].spaceSupporter[i].y);
 
@@ -66,31 +71,37 @@ function moveSupporters(j, i) {
         cellSuppo.x = 1;
         cellSuppo.drawCellSupp();
     } else {
-        cellSuppo.undrawCellSupp();
-        cellSuppo.x += 1;
-        cellSuppo.drawCellSupp();
+        if (cellSuppo.x == alien.x && cellSuppo.y == alien.y){
+            cellSuppo.x += 1;
+            notalien.x = alien.x;
+            notalien.y = alien.y;
+            alien.x = cellSuppo.x;
+            alien.y = cellSuppo.y;
+            let last = arrcomets[j].spaceSupporter[i] == arrcomets[j].spaceSupporter[arrcomets[j].spaceSupporter.length-1];
+            alien.drawAlienCell();
+            notalien.clearAllien(last);
+
+        }else{
+            cellSuppo.undrawCellSupp();
+            cellSuppo.x += 1;
+            cellSuppo.drawCellSupp();
+        }
     }
+    last = false;
     arrcomets[j].spaceSupporter[i] = cellSuppo;
 
-    /*
-    //  controla colision
-    if(alien.pos.y>=4 && alien.pos.y<=7){
-        if (cellSuppo.x == alien.pos.x && cellSuppo.y == alien.pos.y){
-            
-        }
-    }*/
-// segunda zona colision
-    if (cellSuppo.x == alien.pos.x && cellSuppo.y == alien.pos.y) {
-        alert ("DEAD")
+    // zona de colisión 
+  /*  if (cellSuppo.x = alien.x && cellSuppo.y = alien.y) {
+        stop();
+        alert ("DEAD");
     }
+    */
 
-    //console.log(cellSuppo.x)
 }
 
 
 function timeintervalSuppo() {
     timeInSuppo = setInterval(intervalmoveSuppo, 1000);
-
 }
 
 
@@ -101,7 +112,7 @@ function timeintervalSuppo() {
 function intervalmoveSuppo() {
     for (let j = 0; j < arrcomets.length; j++) {
         for (let i = 0; i < arrcomets[j].spaceSupporter.length; i++) {
-            time = setTimeout(moveSupporters, 10, j, i)
+            timeSuppo = setTimeout(moveSupporters, 10, j, i)
         }
     }
 }

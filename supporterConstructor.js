@@ -29,18 +29,7 @@ CellSupporter.prototype.undrawCellSupp = function () {
     supporterCell = document.querySelector('.row' + this.y + ' .col' + this.x)
     supporterCell.classList.add("td")
     supporterCell.classList.remove("spaceSupporter")
-   
-
-   // supporterCell.classList.toggle("td")
-    //supporterCell.classList.toggle("spaceSupporter")
 
 };
-/*
-CellSupporter.prototype.drawAlienCell = function() {
-    suppoAlienCell = document.querySelector('.row' + this.y + ' .col' + this.x)
 
-    suppoAlienCell.classList.remove("spaceSupporter")
-    suppoAlienCell.classList.add("suppoAlienCell")
 
-}
-*/

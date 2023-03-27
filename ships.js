@@ -17,7 +17,7 @@ function drawSpaceShip(qty) {
 
         if (spaceShip.length == 0) {
             //de forma random escoge una columna entre la 1 y 17
-            collisionCol = Math.ceil(Math.random() * ((17 - 1) + 1) + 1);
+            collisionCol = Math.floor(Math.random() * ((17 - 1) + 1) + 1);
             if (collisionCol <= 4) {
                 collisionCol += 4
             }
@@ -73,20 +73,10 @@ function moveSpaceShip(j, i) {
 
     //  controla colision
 
-    if (cell.x == alien.pos.x && cell.y == alien.pos.y) {
-        stop()
-
-       
+    if (cell.x == alien.x && cell.y == alien.y) {
+        stop()   
     }
     
-
-
-
-
-
-
-
-
 
     //console.log(cell.x)
 }
