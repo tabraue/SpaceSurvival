@@ -27,4 +27,6 @@ function Game() {
     timeinterval()
     timeintervalSuppo()
 
+    startTimer();
+
 }
