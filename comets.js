@@ -8,8 +8,6 @@ let cellSuppo = undefined;
 
 
 
-
-
 // dibuja elems en zona support: cantidad det de X celdas
 function drawAllSupports(qty, rockOrShip, minSupport) {
     for (let i = 1; i <= qty; i++) {
@@ -57,7 +55,7 @@ function drawSupporters(qty, minSupport) {
 // creamos un objeto CellSupporter que tiene las dos coordenadas, despintamos y pintamos
 // actualizando la posicion de X aumentadole (+1)
 // Cuando una celda se mueve tenemos que guardar
-    // en el array de cometas la nueva posicion de esta celda
+// en el array de cometas la nueva posicion de esta celda
 function moveSupporters(j, i) {
 
     cellSuppo = new CellSupporter(arrcomets[j].spaceSupporter[i].x, arrcomets[j].spaceSupporter[i].y);
@@ -81,16 +79,7 @@ function moveSupporters(j, i) {
             cellSuppo.undrawCellSupp();
             cellSuppo.x += 1;
             cellSuppo.drawCellSupp();
-
-            /*
-            if(alien.y >= 4 && alien.y <= 7){
-                if (cellSuppo.x != alien.x || cellSuppo.y != alien.y) {
-                stop();
-                }
-            }
-            */
-
-            
+           
         }
     }
     last = false;
@@ -101,7 +90,10 @@ function moveSupporters(j, i) {
 
 function timeintervalSuppo() {
     
-    timeInSuppo = setInterval(intervalmoveSuppo, 400);
+    timeInSuppo = setInterval(function() {
+       // checkHundido();
+        intervalmoveSuppo();
+    }, 1000);
 }
 
 
@@ -113,8 +105,22 @@ function intervalmoveSuppo() {
     for (let j = 0; j < arrcomets.length; j++) {
         for (let i = 0; i < arrcomets[j].spaceSupporter.length; i++) {
             timeSuppo = setTimeout(moveSupporters, 10, j, i)
+
         }
     }
 }
 
+/*
+function checkaliencolision(){
+ for (let j = 0; j < arrcomets.length; j++) {
+        for (let i = 0; i < arrcomets[j].spaceSupporter.length; i++) {
+            if(alien.y >= 4 && alien.y <= 7){
+                if (arrcomets[j].spaceSupporter[i].x != alien.x && arrcomets[j].spaceSupporter[i].y != alien.y) {
+                    stop();
+                }
+            }
+        }
+    }
 
+}
+*/

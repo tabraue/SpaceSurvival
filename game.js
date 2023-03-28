@@ -6,12 +6,11 @@ function game() {
     alien.drawAllien()
 
     //creamos naves en zona colision
-
-
     drawAllColliders(1, 4)
     drawAllColliders(1, 2)
     drawAllColliders(2, 4)
     drawAllColliders(1, 3)
+
 
 
     //creamos los cometas en la zona de support
@@ -25,6 +24,6 @@ function game() {
 
 
     // empieza a mover los elementos de colision
-  // timeinterval()
+    timeinterval()
     timeintervalSuppo()
 }

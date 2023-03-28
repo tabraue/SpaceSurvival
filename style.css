@@ -1,47 +1,106 @@
-*{box-sizing: border-box;
-   margin: 0;
-   padding: 0;
-   
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
 }
+
 .juego {
-    height: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
+
 tr {
     background-color: rgb(117, 236, 117);
 
 }
+
 td {
     background-color: rgba(131, 126, 126, 0.849);
     width: 30px;
     height: 50px;
 }
 
-.allien{
+.allien {
     background-image: url("img/alien.png");
     background-repeat: no-repeat;
     align-items: center;
 }
 
 
-.spaceShip{
+.spaceShip {
     background-color: rgb(82, 23, 124);
 }
 
-.spaceSupporter{
+.spaceSupporter {
     background-color: rgba(127, 255, 212, 0.767);
 }
 
-.start{
-   /* background-image: url("./img/68m.gif");*/
+.starter {
+    /* background-image: url("./img/68m.gif");*/
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
-    border-color: blueviolet solid;
+    height: 834px;
+    width: 544px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: black;
+    position: absolute;
+    z-index: 1;
+
+}
+
+.game-wrapper {
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    border-radius: 4px;
+    background-color: #cf2ab4;
+    border: none;
+    color: #fff;
+    text-align: center;
+    font-size: 32px;
+    padding: 16px;
+    width: 220px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 36px;
+    box-shadow: 0 10px 20px -8px rgba(186, 0, 192, 0.7);
+}
+
+button {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+button:after {
+    content: '✰';
+    position: absolute;
+    opacity: 0;
+    top: 14px;
+    right: -20px;
+    transition: 0.5s;
+}
+
+button:hover {
+    padding-right: 24px;
+    padding-left: 8px;
+}
+
+button:hover:after {
+    opacity: 1;
+    right: 10px;
+}
+
+.off {
+    display: none;
 }

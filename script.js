@@ -34,7 +34,7 @@ function stop (){
     alert ("GAMEOVER")
 } 
 
-
+// PTE FUNCIÓN 
 
 
 //captura evento pulsar tecla & llama a la función moveAllien pasándole por parámetro el evento capturado
@@ -66,12 +66,22 @@ function moveAllien (move) {
                 notalien.clearAllien()
             }
         break;
-        case "ArrowUp": 
-            alien.y--;
-            alien.drawAllien()
-            notalien.y = alien.y+1;
-            notalien.x = alien.x;
-            notalien.clearAllien()
+        case "ArrowUp":
+            if(alien.y === 1){
+                if(alien.x === 4 || alien.x === 9 || alien.x === 14){
+                   console.log('win!!!!!')
+                    notalien.y = alien.y;
+                    notalien.x = alien.x;
+                    notalien.clearAllien()
+                    // FUNCIÓN WIN!!!!! RESTART
+                }
+            }else{
+                alien.y--;
+                alien.drawAllien();
+                notalien.y = alien.y+1;
+                notalien.x = alien.x;
+                notalien.clearAllien();
+            }
         break;
         case "ArrowDown":
             if(alien.y < limitBottom){

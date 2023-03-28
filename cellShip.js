@@ -19,5 +19,5 @@ CellShip.prototype.undrawCell = function (){
     shipCell = document.querySelector('.row'+ this.y +' .col'+ this.x);
     
     shipCell.classList.remove("spaceShip");
-    shipCell.classList.add("td");
+    shipCell.classList.add("td")
 };
