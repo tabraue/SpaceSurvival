@@ -1,3 +1,12 @@
+// variables para naves espaciales zona colisión
+let spaceShip = [];
+let arrships = [];
+let minShip = 9;
+let timein = 0; // interval
+let time; // timeout
+let cell = undefined;
+
+
 // dibuja elems en zona colisión: cantidad det de 2 y 4 celdas
 function drawAllColliders(qty, rockOrShip) {
     for (let i = 1; i <= qty; i++) {
@@ -23,12 +32,6 @@ function drawSpaceShip(qty) {
             }
             collisionRow = minShip;
             minShip++;
-            /*
-            do{
-                collisionRow = Math.ceil( Math.random() * ((13 - 9) +1) + 9);
-
-            }while( (arrships.length != 0) && (arrships[0].spaceShip[0].y == collisionRow) );
-            */
 
             cellSpaceShip = new CellShip(collisionCol, collisionRow)
 
@@ -47,16 +50,11 @@ function drawSpaceShip(qty) {
     spaceShip = [];
 }
 
+// creamos un objeto Cellship que tiene las dos coordenadas, despintamos y pintamos
+// actualizando la posicion de X aumentadole (+1)
+// Cuando una celda se mueve tenemos que guardar
+// en el array de naves la nueva posicion de esta celda 
 function moveSpaceShip(j, i) {
-
-    // console.log(tempShip.spaceShip[0].y) // -> se obtiene coordenada exacta y
-
-    // creamos un objeto Cellship que tiene las dos coordenadas, despintamos y pintamos
-    // actualizando la posicion de X aumentadole (+1)
-    // Cuando una celda se mueve tenemos que guardar
-    // en el array de naves la nueva posicion de esta celda 
-
-
 
     cell = new CellShip(arrships[j].spaceShip[i].x, arrships[j].spaceShip[i].y);
 
@@ -72,18 +70,14 @@ function moveSpaceShip(j, i) {
     arrships[j].spaceShip[i] = cell;
 
     //  controla colision
-
     if (cell.x == alien.x && cell.y == alien.y) {
         stop()   
     }
-    
 
-    //console.log(cell.x)
 }
 
 function timeinterval() {
     timein = setInterval(intervalmove, 100);
-
 }
 
 

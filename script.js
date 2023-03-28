@@ -13,21 +13,11 @@ let notalien = {
 
 */
 
-// ****** Variables & Methods call ****** 
+// ****** Constantes ****** 
 // const limites B L & R
-const limitBottom = document.querySelectorAll('.body>tr').length; // limite abajo == 17
+const limitBottom = document.querySelectorAll('.body>tr').length; // limite abajo == 16
 const limitLeft = 1; // limite izq == 1
-const limitRight = document.querySelectorAll('.row1>td').length; // limite dcha == 16
-
-// variables para naves espaciales zona colisión
-let spaceShip = [];
-let arrships = [];
-let minShip = 9;
-let timein = 0; // interval
-let time; // timeout
-let cell = undefined;
-
-
+const limitRight = document.querySelectorAll('.row1>td').length; // limite dcha == 17
 
 //creación objetos alien (pintar y despintar)
 let alien = new Alien(9,16)
@@ -91,6 +81,16 @@ function moveAllien (move) {
                 notalien.clearAllien()
             }
         break;
+        case "Space":
+            if(alien.y >= 4 && alien.y <= 8){
+                alien.y = alien.y-2;
+                alien.drawAllien()
+                notalien.y = alien.y+2;
+                notalien.x = alien.x;
+                notalien.clearAllien()
+            }
+        break;
+
     }
 }
 

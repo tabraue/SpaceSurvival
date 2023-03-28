@@ -45,12 +45,8 @@ function drawSupporters(qty, minSupport) {
     
             miqueridocellsuportador = new CellSupporter(colFirstCellS, rowFirstCellS)
         }
-    
         miqueridocellsuportador.drawCellSupp()
         spaceSupporter.push(miqueridocellsuportador)
-        
-
-        
     }
 
     arrcomets.push(new MotherSupporter(spaceSupporter))
@@ -58,9 +54,9 @@ function drawSupporters(qty, minSupport) {
 
 }
 
-    // creamos un objeto CellSupporter que tiene las dos coordenadas, despintamos y pintamos
-    // actualizando la posicion de X aumentadole (+1)
-    // Cuando una celda se mueve tenemos que guardar
+// creamos un objeto CellSupporter que tiene las dos coordenadas, despintamos y pintamos
+// actualizando la posicion de X aumentadole (+1)
+// Cuando una celda se mueve tenemos que guardar
     // en el array de cometas la nueva posicion de esta celda
 function moveSupporters(j, i) {
 
@@ -97,11 +93,15 @@ function moveSupporters(j, i) {
     }
     */
 
+
+
+
 }
 
 
 function timeintervalSuppo() {
-    timeInSuppo = setInterval(intervalmoveSuppo, 1000);
+    
+    timeInSuppo = setInterval(intervalmoveSuppo, 400);
 }
 
 

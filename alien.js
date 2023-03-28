@@ -36,7 +36,8 @@ NotAlien.prototype.clearAllien = function(isLastCell) {
     let emptyCell = document.querySelector(`.row${this.y} .col${this.x}`)
     
     if(isLastCell)
-        emptyCell.classList.remove('spaceSupporter')
-    emptyCell.classList.remove('allien')
+    emptyCell.classList.remove('spaceSupporter')
+    
+    emptyCell.classList.remove('allien') 
     emptyCell.classList.add('td')
 } 
