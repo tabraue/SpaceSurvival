@@ -31,10 +31,10 @@ function stop (){
     clearTimeout(timeSuppo)
     clearInterval(timein)
     clearTimeout(time)
-    alert ("GAMEOVER")
+    gameOver()
 } 
 
-// PTE FUNCIÓN 
+
 
 
 //captura evento pulsar tecla & llama a la función moveAllien pasándole por parámetro el evento capturado
@@ -73,7 +73,7 @@ function moveAllien (move) {
                     notalien.y = alien.y;
                     notalien.x = alien.x;
                     notalien.clearAllien()
-                    // FUNCIÓN WIN!!!!! RESTART
+                    // FUNCIÓN WIN!!!!! MENSAJE!
                 }
             }else{
                 alien.y--;

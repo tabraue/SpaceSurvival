@@ -1,6 +1,5 @@
 // función constructora, contenedoras de naves espaciales aka arrships
 
-
 function MotherSupporter(spaceSupporter) {
     this.spaceSupporter = spaceSupporter;
 }
@@ -31,5 +30,4 @@ CellSupporter.prototype.undrawCellSupp = function () {
     supporterCell.classList.remove("spaceSupporter")
 
 };
-
 
