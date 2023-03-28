@@ -26,14 +26,15 @@ let notalien = new NotAlien(0,0)
 game();
 
 function stop (){
-
     //window.removeEventListener()   ?????????????????????
-    clearInterval(timein)
     clearInterval(timeInSuppo)
-    clearTimeout(time)
     clearTimeout(timeSuppo)
+    clearInterval(timein)
+    clearTimeout(time)
     alert ("GAMEOVER")
-}
+} 
+
+
 
 
 //captura evento pulsar tecla & llama a la función moveAllien pasándole por parámetro el evento capturado
@@ -90,7 +91,6 @@ function moveAllien (move) {
                 notalien.clearAllien()
             }
         break;
-
     }
 }
 

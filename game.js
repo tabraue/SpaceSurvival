@@ -14,7 +14,7 @@ function game() {
     drawAllColliders(1, 3)
 
 
-    //creamos 
+    //creamos los cometas en la zona de support
     drawAllSupports(2, 4, minSupport)
     minSupport++
     drawAllSupports(2, 4, minSupport)
@@ -24,15 +24,7 @@ function game() {
     drawAllSupports(2, 2, minSupport)
 
 
-
-
-
-
-
-
-
-
     // empieza a mover los elementos de colision
-    timeinterval()
+  // timeinterval()
     timeintervalSuppo()
 }

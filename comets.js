@@ -76,25 +76,25 @@ function moveSupporters(j, i) {
             let last = arrcomets[j].spaceSupporter[i] == arrcomets[j].spaceSupporter[arrcomets[j].spaceSupporter.length-1];
             alien.drawAlienCell();
             notalien.clearAllien(last);
-
+      
         }else{
             cellSuppo.undrawCellSupp();
             cellSuppo.x += 1;
             cellSuppo.drawCellSupp();
+
+            /*
+            if(alien.y >= 4 && alien.y <= 7){
+                if (cellSuppo.x != alien.x || cellSuppo.y != alien.y) {
+                stop();
+                }
+            }
+            */
+
+            
         }
     }
     last = false;
     arrcomets[j].spaceSupporter[i] = cellSuppo;
-
-    // zona de colisión 
-  /*  if (cellSuppo.x = alien.x && cellSuppo.y = alien.y) {
-        stop();
-        alert ("DEAD");
-    }
-    */
-
-
-
 
 }
 
