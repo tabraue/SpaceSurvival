@@ -94,6 +94,7 @@ td {
     justify-content: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-image: url("/img/image.png");
     background-color: black;
     position: absolute;
     z-index: 1;
