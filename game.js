@@ -1,9 +1,9 @@
-function game() {
+function Game() {
     let minSupport = 4;
 
 
     //aparece alien   
-    alien.drawAllien()
+    alien.drawAlien()
 
     //creamos naves en zona colision
     drawAllColliders(1, 4)
@@ -14,16 +14,17 @@ function game() {
 
 
     //creamos los cometas en la zona de support
-    drawAllSupports(2, 4, minSupport)
+    drawAllSupports(1, 2, minSupport)
     minSupport++
-    drawAllSupports(2, 4, minSupport)
-    minSupport++
-    drawAllSupports(2, 4, minSupport)
-    minSupport++
+    drawAllSupports(2, 1, minSupport)
+     minSupport++
     drawAllSupports(2, 2, minSupport)
+     minSupport++
+    drawAllSupports(2, 3, minSupport)
 
-
+    
     // empieza a mover los elementos de colision
     timeinterval()
     timeintervalSuppo()
+
 }

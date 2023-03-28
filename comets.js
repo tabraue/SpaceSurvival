@@ -5,8 +5,10 @@ let arrcomets = [];
 let timeInSuppo; // interval
 let timeSuppo; // timeout
 let cellSuppo = undefined;
-
-
+let flag = false;
+let positionAlien = 0;
+let arrcolisionalienX = [];
+let arrcolisionalienY = []; 
 
 // dibuja elems en zona support: cantidad det de X celdas
 function drawAllSupports(qty, rockOrShip, minSupport) {
@@ -22,7 +24,6 @@ function drawSupporters(qty, minSupport) {
     let miqueridocellsuportador;
     let supporterRow;
     let supporterCol;
-
 
     for (let i = 0; i < qty; i++) {
 
@@ -49,7 +50,6 @@ function drawSupporters(qty, minSupport) {
 
     arrcomets.push(new MotherSupporter(spaceSupporter))
     spaceSupporter = [];
-
 }
 
 // creamos un objeto CellSupporter que tiene las dos coordenadas, despintamos y pintamos
@@ -59,12 +59,13 @@ function drawSupporters(qty, minSupport) {
 function moveSupporters(j, i) {
 
     cellSuppo = new CellSupporter(arrcomets[j].spaceSupporter[i].x, arrcomets[j].spaceSupporter[i].y);
-
+    
     if (cellSuppo.x == limitRight) {
         cellSuppo.undrawCellSupp();
         cellSuppo.x = 1;
         cellSuppo.drawCellSupp();
     } else {
+
         if (cellSuppo.x == alien.x && cellSuppo.y == alien.y){
             cellSuppo.x += 1;
             notalien.x = alien.x;
@@ -73,27 +74,26 @@ function moveSupporters(j, i) {
             alien.y = cellSuppo.y;
             let last = arrcomets[j].spaceSupporter[i] == arrcomets[j].spaceSupporter[arrcomets[j].spaceSupporter.length-1];
             alien.drawAlienCell();
-            notalien.clearAllien(last);
-      
+            notalien.clearAlien(last);
         }else{
+                
             cellSuppo.undrawCellSupp();
             cellSuppo.x += 1;
             cellSuppo.drawCellSupp();
-           
+                    
         }
+            
     }
+    
     last = false;
-    arrcomets[j].spaceSupporter[i] = cellSuppo;
-
+    arrcomets[j].spaceSupporter[i] = cellSuppo;  
 }
 
 
 function timeintervalSuppo() {
-    
     timeInSuppo = setInterval(function() {
-       // checkHundido();
         intervalmoveSuppo();
-    }, 1000);
+    }, 100);
 }
 
 
@@ -105,29 +105,39 @@ function intervalmoveSuppo() {
     for (let j = 0; j < arrcomets.length; j++) {
         for (let i = 0; i < arrcomets[j].spaceSupporter.length; i++) {
             timeSuppo = setTimeout(moveSupporters, 10, j, i)
-
+            checkaliencolision();
         }
     }
 }
 
-/*
+//Esta funcion comprueba la colisión del alien con el "espacio" SOLO cuando llega a las filas entre 4 y 7
+//con doble for loop recorremos la posición de los cometas, y las añadimos a arr de posición X y posición Y
+//en caso que no se encuentre la posición x del alien dentro del arr X de los cometas ((indexOf)) ===> game over
+//si no, limpiamos arrays y comenzamos
 function checkaliencolision(){
- for (let j = 0; j < arrcomets.length; j++) {
-        for (let i = 0; i < arrcomets[j].spaceSupporter.length; i++) {
-            if(alien.y >= 4 && alien.y <= 7){
-                if (arrcomets[j].spaceSupporter[i].x != alien.x && arrcomets[j].spaceSupporter[i].y != alien.y) {
-                    stop();
-                }
+    if(alien.y <= 7 && alien.y >=4){
+        for (let j = 0; j < arrcomets.length; j++) {
+            for (let i = 0; i < arrcomets[j].spaceSupporter.length; i++) {
+                arrcolisionalienX.push(arrcomets[j].spaceSupporter[i].x)
+                arrcolisionalienY.push(arrcomets[j].spaceSupporter[i].y)
             }
         }
+        if(arrcolisionalienX.indexOf(alien.x) == -1){
+           /////FUNCTION GAME OVER
+           
+            console.log("muerte")
+            stop()     
+        }else{
+            arrcolisionalienX = []
+            arrcolisionalienY = []
+        }
     }
-
 }
-*/
 
 
 
 
+/*
 function drawblackholes(){
 
     blackhole = document.querySelector('.row1' + ' .col1')
@@ -136,3 +146,4 @@ function drawblackholes(){
     blackhole.classList.add('blackhole')
 
 }
+*/

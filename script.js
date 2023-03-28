@@ -1,29 +1,17 @@
-/*let alien = {
-    pos: {
-        x: 9,
-        y: 16
-    },
-}
-
-let notalien = {
-    pos: {
-
-    },
-}
-
-*/
-
-// ****** Constantes ****** 
-// const limites B L & R
+// Constantes limites B L & R
 const limitBottom = document.querySelectorAll('.body>tr').length; // limite abajo == 16
 const limitLeft = 1; // limite izq == 1
 const limitRight = document.querySelectorAll('.row1>td').length; // limite dcha == 17
+
 
 //creación objetos alien (pintar y despintar)
 let alien = new Alien(9,16)
 let notalien = new NotAlien(0,0)
 
-game();
+
+// inicio del juego
+Game();
+
 
 function stop (){
     //window.removeEventListener()   ?????????????????????
@@ -36,12 +24,13 @@ function stop (){
 
 
 
-
 //captura evento pulsar tecla & llama a la función moveAllien pasándole por parámetro el evento capturado
 window.addEventListener('keydown', function (event) {
-    moveAllien(event.code)
-})
+    
+    alien.moveAlien(event.code)
+});
 
+/*
 function moveAllien (move) {
     switch(move){
         case "ArrowLeft": 
@@ -103,4 +92,4 @@ function moveAllien (move) {
         break;
     }
 }
-
+*/
