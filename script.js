@@ -8,7 +8,6 @@ let alien;
 let notalien;
 
 let game = new Game();
-console.log()
 
 game.letsStart();
 

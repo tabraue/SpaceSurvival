@@ -1,11 +1,11 @@
-// función constructora, contenedoras de naves espaciales aka arrships
+// función constructora zona support
 
 function MotherSupporter(spaceSupporter) {
     this.spaceSupporter = spaceSupporter;
 }
 
 
-//función constructora de celdas para las naves espaciales
+//función constructora de celdas la zona support
 let supporterCell = '';
 let suppoAlienCell;
 
@@ -22,11 +22,9 @@ CellSupporter.prototype.drawCellSupp = function () {
         supporterCell.classList.remove('td')
         supporterCell.classList.add("spaceSupporter")
    }catch(error){
+        gameOver()
         stop()
    }
-
-
-
 };
 
 CellSupporter.prototype.undrawCellSupp = function () {
@@ -37,9 +35,8 @@ CellSupporter.prototype.undrawCellSupp = function () {
         supporterCell.classList.add("td")
         supporterCell.classList.remove("spaceSupporter")
     }catch(error){
+        gameOver()
         stop()
     }
-    
-
 };
 

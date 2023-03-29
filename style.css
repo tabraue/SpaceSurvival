@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
 }
+/*space ships from intro instructions*/
 .material-symbols-outlined {
     font-variation-settings:
         'FILL' 0,
@@ -12,6 +13,9 @@
 }
 
 .instrucciones{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: white;
 }
 
@@ -19,8 +23,7 @@
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;;
-
+    justify-content: center;
 }
 
 table {
@@ -73,7 +76,6 @@ td {
 
 .spaceSupporter {
     background-image: url("img/cometawapo2.png");
-
 }
 
 .allien {
@@ -180,9 +182,10 @@ td {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:transparent;
+    background-color: transparent;
     position: absolute;
     z-index: 10;
+    transition: 0.5s;
 }
 
 .you-win {
@@ -190,8 +193,8 @@ td {
     background-size: contain;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    height: 834px;
-    width: 544px;
+    height: 100%;
+    width: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -219,25 +222,31 @@ td {
     }
 }
 
-/* C O U N T   D O W N   T I M E R */
+/* C O U N T D O W N   T I M E R */
+
+#clock{
+    display: flex;
+}
 
 #timer {
     display: flex;
     align-self: flex-start;
     background-color: #000000;
     font-weight: bold;
-    font-size:x-large;
+    font-size: x-large;
     color: #fff;
     border-radius: 10px;
     padding-top: 15px;
     padding-bottom: 10px;
     position: fixed;
     top: 10px;
-    width: 510px;
+    height:5%;
+    width: 40vw;
     justify-content: center;
 }
 
 #timer:before{
+    display: flex;
     content: "";
     position: absolute;
     top: 0;

@@ -97,15 +97,13 @@ function checkRadio(flag2){
 
         timeinterval(speed)
         timeintervalSuppo(speed)   
-        }
+    }
 }
 
 
 
 
 function timeinterval(speed) {
-    //let speed = dameSpeed();
-    console.log(speed)
     timein = setInterval(intervalmove, speed);
     
 }

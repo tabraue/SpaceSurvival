@@ -41,7 +41,6 @@ function stopMusic() {
 let button = document.getElementsByClassName("start-button")[0]
 button.addEventListener("click", start);
 
-
 function start(){
   audio1.play()
   let starter = document.getElementsByClassName("starter")[0];
@@ -49,7 +48,7 @@ function start(){
   startCountdown();
 }
 
-// para todos los intervalos del juego
+// S T O P  I N T E R V A L S  &  T I M E R S
 function stop() {
   clearInterval(timeInSuppo)
   clearTimeout(timeSuppo)
@@ -60,36 +59,31 @@ function stop() {
 
 
 
-// fin del juego
-let over
-
+// G A M E  O V E R
+let over;
 function gameOver(){
   over = document.getElementsByClassName("game-over")[0]
   over.classList.remove("off")
-  //over.classList.add("transition")
   audio1.pause()
   audioGameOver.play()
-
- let tryagain = setTimeout(function(){
-
-  location.reload()
+  let tryagain = setTimeout(function(){
+    location.reload()
   }, 5200);
 
 
 }
 
-
+// Y O U  W I N
 function winner(){
   let win = document.getElementsByClassName("you-win")[0]
   win.classList.remove("off")
-  win.classList.add("transition")
   stop()
   audio1.pause()
   audiotimerwin = setTimeout(audioWinner,1000);
   audioWinner.play();
   let tryagain = setTimeout(function(){
     location.reload()
-    }, 5200);
+  }, 5200);
 }
 
 
@@ -102,17 +96,13 @@ let thetimer;
 
 function startCountdown(){
   let timeLeft = 20;
-
   thetimer = document.getElementById("timer") // elem countdown del html
-
     countDown = setInterval(function(){
       if(timeLeft <= 0){
         clearInterval(countDown);
         gameOver();
       }
-
       thetimer.innerText = timeLeft;
       timeLeft--;
-
     }, 1000);
 }

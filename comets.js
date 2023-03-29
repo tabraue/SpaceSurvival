@@ -80,9 +80,7 @@ function moveSupporters(j, i) {
             cellSuppo.undrawCellSupp();
             cellSuppo.x += 1;
             cellSuppo.drawCellSupp();
-                    
         }
-            
     }
     
     last = false;
@@ -123,7 +121,8 @@ function checkaliencolision(){
             }
         }
         if(arrcolisionalienX.indexOf(alien.x) == -1){
-           gameOver()   
+            stop();
+            gameOver();
         }else{
             arrcolisionalienX = []
             arrcolisionalienY = []

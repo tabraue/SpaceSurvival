@@ -9,6 +9,7 @@ Game.prototype.letsStart = function (){
   //creación objetos alien (pintar y despintar)
   alien = new Alien(9,16)
   notalien = new NotAlien(0,0)
+  
   //aparece alien   
   alien.drawAlien()
 
