@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="start.js" defer></script>
-    <!--<script src="motherShip.js" defer></script>-->
     <script src="cellShip.js" defer></script>
     <script src="game.js" defer></script>
     <script src="ships.js" defer></script>
@@ -15,84 +14,79 @@
     <script src="comets.js" defer></script>
     <script src="alien.js" defer></script>
     <script src="script.js" defer></script>
-
     <title>Space Survival</title>
+    <link rel="shortcut icon" href="./img/alienpiskel.gif">
 </head>
-
 <body>
     <div class="game-wrapper">
         <div class="starter">
             <button class="start-button">START</button>
         </div>
-        
-
-
         <div class="juego">
-
             <table class="board">
                 <div id="clock">
                     <span id="timer">60</span>
-                    <button class="mute">🔇</button>
+                    <button class="mute">🔈</button>
                 </div>
-                <thead>
+                <thead class="thead">
                     <tr class="row1">
-                        <td class="col1 goal"></td>
-                        <td class="col2 goal"></td>
-                        <td class="col3 goal"></td>
-                        <td class="col4 goal"></td>
-                        <td class="col5 goal"></td>
-                        <td class="col6 goal"></td>
-                        <td class="col7 goal"></td>
-                        <td class="col8 goal"></td>
-                        <td class="col9 goal"></td>
-                        <td class="col10 goal"></td>
-                        <td class="col11 goal"></td>
-                        <td class="col12 goal"></td>
-                        <td class="col13 goal"></td>
-                        <td class="col14 goal"></td>
-                        <td class="col15 goal"></td>
-                        <td class="col16 goal"></td>
-                        <td class="col17 goal"></td>
+                        <td class="col1 home"></td>
+                        <td class="col2 home"></td>
+                    <td class="col3 home"></td>
+                    <td class="col4 home"></td>
+                    <td class="col5 home"></td>
+                    <td class="col6 home"></td>
+                    <td class="col7 home"></td>
+                    <td class="col8 home"></td>
+                    <td class="col9 home"></td>
+                    <td class="col10 home"></td>
+                    <td class="col11 home"></td>
+                    <td class="col12 home"></td>
+                    <td class="col13 home"></td>
+                    <td class="col14 home"></td>
+                    <td class="col15 home"></td>
+                    <td class="col16 home"></td>
+                    <td class="col17 home"></td>
                     </tr>
                     <tr class="row2">
-                        <td class="col1 goal"></td>
-                        <td class="col2 goal"></td>
-                        <td class="col3 goal"></td>
-                        <td class="col4 goal"></td>
-                        <td class="col5 goal"></td>
-                        <td class="col6 goal"></td>
-                        <td class="col7 goal"></td>
-                        <td class="col8 goal"></td>
-                        <td class="col9 goal"></td>
-                        <td class="col10 goal"></td>
-                        <td class="col11 goal"></td>
-                        <td class="col12 goal"></td>
-                        <td class="col13 goal"></td>
-                        <td class="col14 goal"></td>
-                        <td class="col15 goal"></td>
-                        <td class="col16 goal"></td>
-                        <td class="col17 goal"></td>
+                        <td class="col1 home"></td>
+                        <td class="col2 home"></td>
+                        <td class="col3 home"></td>
+                        <td class="col4 home"></td>
+                        <td class="col5 home"></td>
+                        <td class="col6 home"></td>
+                        <td class="col7 home"></td>
+                        <td class="col8 home"></td>
+                        <td class="col9 home"></td>
+                        <td class="col10 home"></td>
+                        <td class="col11 home"></td>
+                        <td class="col12 home"></td>
+                        <td class="col13 home"></td>
+                        <td class="col14 home"></td>
+                        <td class="col15 home"></td>
+                        <td class="col16 home"></td>
+                        <td class="col17 home"></td>
                     </tr>
                     <tr class="row3">
-                        <td class="col1 goal"></td>
-                        <td class="col2 goal"></td>
-                        <td class="col3 goal"></td>
-                        <td class="col4 goal"></td>
-                        <td class="col5 goal"></td>
-                        <td class="col6 goal"></td>
-                        <td class="col7 goal"></td>
-                        <td class="col8 goal"></td>
-                        <td class="col9 goal"></td>
-                        <td class="col10 goal"></td>
-                        <td class="col11 goal"></td>
-                        <td class="col12 goal"></td>
-                        <td class="col13 goal"></td>
-                        <td class="col14 goal"></td>
-                        <td class="col15 goal"></td>
-                        <td class="col16 goal"></td>
-                        <td class="col17 goal"></td>
+                        <td class="col1 home"></td>
+                        <td class="col2 home"></td>
+                        <td class="col3 home"></td>
+                        <td class="col4 home"></td>
+                        <td class="col5 home"></td>
+                        <td class="col6 home"></td>
+                        <td class="col7 home"></td>
+                        <td class="col8 home"></td>
+                        <td class="col9 home"></td>
+                        <td class="col10 home"></td>
+                        <td class="col11 home"></td>
+                        <td class="col12 home"></td>
+                        <td class="col13 home"></td>
+                        <td class="col14 home"></td>
+                        <td class="col15 home"></td>
+                        <td class="col16 home"></td>
+                        <td class="col17 home"></td>
                     </tr>
-                </thead>
+                </thead>   
                 <tbody>
                     <tr class="row4">
                         <td class="col1 collision1"></td>
@@ -171,25 +165,27 @@
                         <td class="col17 collision1"></td>
                     </tr>
                 </tbody>
-                <tr class="row8">
-                    <td class="col1 safe"></td>
-                    <td class="col2 safe"></td>
-                    <td class="col3 safe"></td>
-                    <td class="col4 safe"></td>
-                    <td class="col5 safe"></td>
-                    <td class="col6 safe"></td>
-                    <td class="col7 safe"></td>
-                    <td class="col8 safe"></td>
-                    <td class="col9 safe"></td>
-                    <td class="col10 safe"></td>
-                    <td class="col11 safe"></td>
-                    <td class="col12 safe"></td>
-                    <td class="col13 safe"></td>
-                    <td class="col14 safe"></td>
-                    <td class="col15 safe"></td>
-                    <td class="col16 safe"></td>
-                    <td class="col17 safe"></td>
-                </tr>
+                <tbody id="safespace">
+                    <tr class="row8">
+                        <td class="col1 safe"></td>
+                        <td class="col2 safe"></td>
+                        <td class="col3 safe"></td>
+                        <td class="col4 safe"></td>
+                        <td class="col5 safe"></td>
+                        <td class="col6 safe"></td>
+                        <td class="col7 safe"></td>
+                        <td class="col8 safe"></td>
+                        <td class="col9 safe"></td>
+                        <td class="col10 safe"></td>
+                        <td class="col11 safe"></td>
+                        <td class="col12 safe"></td>
+                        <td class="col13 safe"></td>
+                        <td class="col14 safe"></td>
+                        <td class="col15 safe"></td>
+                        <td class="col16 safe"></td>
+                        <td class="col17 safe"></td>
+                    </tr>
+                </tbody>
                 <tbody>
                     <tr class="row9">
                         <td class="col1 collision2"></td>
@@ -213,7 +209,7 @@
                     <tr class="row10">
                         <td class="col1 collision2"></td>
                         <td class="col2 collision2"></td>
-                        <td class="col3 collison2"></td>
+                        <td class="col3 collision2"></td>
                         <td class="col4 collision2"></td>
                         <td class="col5 collision2"></td>
                         <td class="col6 collision2"></td>
@@ -287,7 +283,7 @@
                         <td class="col17 collision2"></td>
                     </tr>
                 </tbody>
-                <tfoot>
+                <tfoot class="thead">
                     <tr class="row14">
                         <td class="col1 home"></td>
                         <td class="col2 home"></td>
@@ -346,11 +342,10 @@
                         <td class="col17 home"></td>
                     </tr>
                 </tfoot>
-
             </table>
-
         </div>
         <div class="game-over off"></div>
+        <div class="you-win off"></div>
     </div>
 </body>
 

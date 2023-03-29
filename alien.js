@@ -1,4 +1,4 @@
-
+//función constructora del alien
 
 function Alien(x,y){
     this.x = x;
@@ -7,32 +7,26 @@ function Alien(x,y){
 
 //busca la celda donde se mueve el alien y la "pinta"
 Alien.prototype.drawAlien = function() {
+
     let allienCell = document.querySelector(`.row${this.y} .col${this.x}`)
     allienCell.classList.add('allien')
 }
 
 //busca la celda en zona support para pintar alien+support
 Alien.prototype.drawAlienCell = function() {
-  let aliencelinsupo = document.querySelector('.row' + this.y + ' .col' + this.x)
 
-
-    //aliencelinsupo.classList.remove("spaceSupporter")
+    let aliencelinsupo = document.querySelector('.row' + this.y + ' .col' + this.x)
     aliencelinsupo.classList.add("allien")
     aliencelinsupo.classList.add("spaceSupporter")
-   
 }
 
 //gestiona el movimiento del alien a través del evento keydown
 Alien.prototype.moveAlien = function(move){
     switch(move){
         case "ArrowLeft": 
-            //if controla los limites de los bordes
             if(alien.x > limitLeft){
-                //izq actualiza x -1
                 alien.x--;
-                //pinta alien en posicion donde se mueve
                 alien.drawAlien();
-                //recoge posicion x & y para despintar alien
                 notalien.x = alien.x+1;
                 notalien.y = alien.y;
                 notalien.clearAlien();
@@ -50,11 +44,10 @@ Alien.prototype.moveAlien = function(move){
         case "ArrowUp":
             if(alien.y === 1){
                 if(alien.x === 4 || alien.x === 9 || alien.x === 14){
-                   console.log('win!!!!!')
                     notalien.y = alien.y;
                     notalien.x = alien.x;
                     notalien.clearAlien()
-                    // FUNCIÓN WIN!!!!! MENSAJE!
+                    winner()
                 }
             }else{
                 alien.y--;
@@ -85,19 +78,17 @@ Alien.prototype.moveAlien = function(move){
     }
 }
 
-
-
-
-
 /////////////////////////////////////////////////////////////////////////////////////
 
+//function constructora del no-alien: despintar alien
 
 function NotAlien(x,y){
     this.x = x;
     this.y = y;
 }
 
-//busca la celda que deja atrás el alien y la "despinta"
+//busca la celda que deja atrás el alien y la "despinta" ** tiene en cuenta la posibilidad de la ultima celda
+// para que no de fallo
 NotAlien.prototype.clearAlien = function(isLastCell) {
     let emptyCell = document.querySelector(`.row${this.y} .col${this.x}`)
     
