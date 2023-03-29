@@ -91,10 +91,14 @@ function NotAlien(x,y){
 // para que no de fallo
 NotAlien.prototype.clearAlien = function(isLastCell) {
     let emptyCell = document.querySelector(`.row${this.y} .col${this.x}`)
-    
+   try{
     if(isLastCell)
-    emptyCell.classList.remove('spaceSupporter')
+        emptyCell.classList.remove('spaceSupporter')
     
     emptyCell.classList.remove('allien') 
     emptyCell.classList.add('td')
+   } catch(error){
+        stop()
+   }
+
 } 

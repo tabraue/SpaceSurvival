@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style.css">
+    <script src="game.js" defer></script>
     <script src="start.js" defer></script>
     <script src="cellShip.js" defer></script>
-    <script src="game.js" defer></script>
     <script src="ships.js" defer></script>
     <script src="supporterConstructor.js" defer></script>
     <script src="comets.js" defer></script>
@@ -30,11 +30,28 @@
                 </div>
             </div>
             <button class="start-button">START</button>
+<!--
+            <fieldset class="instrucciones">
+                <legend class="instrucciones">Select your difficulty</legend>
+                    <div>
+                        <input type="radio" id="easy" name="difficulty" value="easy">
+                        <label for="easy">Easy</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="medium" name="difficulty" value="medium">
+                        <label for="medium">Medium</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="high" name="difficulty" value="high">
+                        <label for="high">High</label>
+                    </div>
+            </fieldset>
+-->
         </div>
         <div class="juego">
             <table class="board">
                 <div id="clock">
-                    <span id="timer">60</span>
+                    <span id="timer"> </span>
                     <button class="mute">🔈</button>
                 </div>
                 <thead class="thead">
@@ -353,7 +370,8 @@
                 </tfoot>
             </table>
         </div>
-        <div class="game-over off"></div>
+        <div class="game-over off">
+        </div>
         <div class="you-win off"></div>
     </div>
 </body>

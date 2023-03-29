@@ -1,4 +1,3 @@
-
 let shipCell = '';
 
 // función constructora, contenedoras de naves espaciales aka arrships
@@ -13,17 +12,28 @@ function CellShip(x, y){
     this.y = y;
 };
 
-CellShip.prototype.drawCell = function (){
 
-    shipCell = document.querySelector('.row'+ this.y +' .col'+ this.x);
-    shipCell.classList.remove('td');
-    shipCell.classList.add("spaceShip");
+//se añaden try-catch para controlar posibles errores y realizar función de parar los intervalos (movimientos)
+CellShip.prototype.drawCell = function (){
+    try{
+        shipCell = document.querySelector('.row'+ this.y +' .col'+ this.x);
+        shipCell.classList.remove('td');
+        shipCell.classList.add("spaceShip");
+    }catch(error){
+        stop();
+    }
+    
 };
 
 CellShip.prototype.undrawCell = function (){
     
-    shipCell = document.querySelector('.row'+ this.y +' .col'+ this.x);
+    try{
+        shipCell = document.querySelector('.row'+ this.y +' .col'+ this.x);
     
-    shipCell.classList.remove("spaceShip");
-    shipCell.classList.add("td")
+        shipCell.classList.remove("spaceShip");
+        shipCell.classList.add("td");
+    }catch(error){
+        stop()
+    }
+
 };

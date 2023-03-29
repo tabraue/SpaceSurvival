@@ -17,8 +17,14 @@ function CellSupporter(x, y) {
 CellSupporter.prototype.drawCellSupp = function () {
 
     supporterCell = document.querySelector('.row' + this.y + ' .col' + this.x)
-    supporterCell.classList.remove('td')
-    supporterCell.classList.add("spaceSupporter")
+   
+   try{
+        supporterCell.classList.remove('td')
+        supporterCell.classList.add("spaceSupporter")
+   }catch(error){
+        stop()
+   }
+
 
 
 };
@@ -26,8 +32,14 @@ CellSupporter.prototype.drawCellSupp = function () {
 CellSupporter.prototype.undrawCellSupp = function () {
 
     supporterCell = document.querySelector('.row' + this.y + ' .col' + this.x)
-    supporterCell.classList.add("td")
-    supporterCell.classList.remove("spaceSupporter")
+    
+    try{
+        supporterCell.classList.add("td")
+        supporterCell.classList.remove("spaceSupporter")
+    }catch(error){
+        stop()
+    }
+    
 
 };
 
