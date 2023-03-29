@@ -123,10 +123,7 @@ function checkaliencolision(){
             }
         }
         if(arrcolisionalienX.indexOf(alien.x) == -1){
-           /////FUNCTION GAME OVER
-           
-            console.log("muerte")
-            stop()     
+           gameOver()   
         }else{
             arrcolisionalienX = []
             arrcolisionalienY = []

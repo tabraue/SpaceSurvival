@@ -10,18 +10,13 @@ let notalien = new NotAlien(0,0)
 
 
 // inicio del juego
+/*
+let game = new Game;
+game.Game();
+game.start()
+*/
+
 Game();
-
-
-function stop (){
-    //window.removeEventListener()   ?????????????????????
-    clearInterval(timeInSuppo)
-    clearTimeout(timeSuppo)
-    clearInterval(timein)
-    clearTimeout(time)
-    gameOver()
-} 
-
 
 
 //captura evento pulsar tecla & llama a la función moveAllien pasándole por parámetro el evento capturado
@@ -29,27 +24,7 @@ window.addEventListener('keydown', function (event) {
     alien.moveAlien(event.code)
 });
 
-////////////////////////
-// T I M E R
 
-
-
-let countDown; 
-var timeLeft = 20;
-let thetimer = document.getElementById("timer") // elem countdown del html
-
-function startCountdown(){
-  countDown = setInterval(function(){
-    if(timeLeft <= 0){
-      clearInterval(countDown);
-      document.getElementById("timer").innerHTML = "****";
-    } else {
-      document.getElementById("timer").innerHTML = timeleft + " seconds";
-    }
-    timeleft -= 1;
-  }, 1000);
-
-}
 
 
 

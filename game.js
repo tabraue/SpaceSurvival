@@ -29,15 +29,62 @@ function Game() {
 
 
 
-
-
 }
 
 /*
 
-Game.prototype.startCountdown = function (){
 
-
+function Game (){
 
 }
+
+
+// T I M E R  C O U N T D O W N ************************************************ //
+
+let countDown;
+let thetimer;
+
+
+Game.prototype.startCountdown = function (){
+
+  let timeLeft = 60;
+
+  thetimer = document.getElementById("timer") // elem countdown del html
+
+    countDown = setInterval(function(){
+      if(timeLeft <= 0){
+        clearInterval(countDown);
+      }
+
+      thetimer.innerText = timeLeft;
+      timeLeft--;
+
+    }, 1000);
+
+}
+
+
+// S T A R T ***************************************************************** //
+
+
+let button = document.getElementsByClassName("start-button")[0]
+button.addEventListener("click", start);
+
+
+
+Game.prototype.start = function (){
+
+    let starter = document.getElementsByClassName("starter")[0];
+    game.startCountdown();
+    starter.classList.add("off");
+
+}
+
+Game.prototype.gameOver = function (){
+
+    let over = document.getElementsByClassName("game-over")[0]
+    over.removeAttribute("off")
+
+}
+
 */

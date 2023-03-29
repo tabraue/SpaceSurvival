@@ -71,7 +71,7 @@ function moveSpaceShip(j, i) {
 
     //  controla colision
     if (cell.x == alien.x && cell.y == alien.y) {
-        stop()   
+        gameOver()   
     }
 
 }
