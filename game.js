@@ -27,6 +27,17 @@ function Game() {
     timeinterval()
     timeintervalSuppo()
 
-   // startTimer();
+
+
+
 
 }
+
+/*
+
+Game.prototype.startCountdown = function (){
+
+
+
+}
+*/

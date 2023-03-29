@@ -32,28 +32,24 @@ window.addEventListener('keydown', function (event) {
 ////////////////////////
 // T I M E R
 
-/*
+
+
 let countDown; 
 var timeLeft = 20;
-let thetimer = document.getElementById("timer")
+let thetimer = document.getElementById("timer") // elem countdown del html
 
-//se acaba el tiempo
-function noTimeLeft() {
-  cancelInterval(countDown);
-  gameOver()
+function startCountdown(){
+  countDown = setInterval(function(){
+    if(timeLeft <= 0){
+      clearInterval(countDown);
+      document.getElementById("timer").innerHTML = "****";
+    } else {
+      document.getElementById("timer").innerHTML = timeleft + " seconds";
+    }
+    timeleft -= 1;
+  }, 1000);
+
 }
 
-function updateTimer() {
-  timeLeft--;
-  if(timeLeft >= 0){
-     thetimer.value = timeLeft.innerText;
-  }else {
-    noTimeLeft();
-  }
-}
 
-function startTimer() {
-  countDown = setInterval(updateTimer, 1000);
-  updateTimer();
-}
-*/
+
