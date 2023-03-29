@@ -3,6 +3,17 @@
     margin: 0;
     padding: 0;
 }
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+.instrucciones{
+    background-color: white;
+}
 
 .juego {
     height: 100vh;
@@ -81,14 +92,14 @@ td {
 }
 
 .starter {
-    height: 834px;
-    width: 544px;
+    height: 100%;
+    width: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("/img/image.png");
+    background-image: url("/img/fondopantalla.gif");
     background-color: black;
     position: absolute;
     z-index: 1;
@@ -164,12 +175,12 @@ td {
     background-size: contain;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    height: 834px;
-    width: 544px;
+    height: 100%;
+    width: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(0, 0, 0);
+    background-color:transparent;
     position: absolute;
     z-index: 10;
 }
