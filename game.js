@@ -1,11 +1,9 @@
 function Game() {
-  //this.speed = speed;
+ 
 }  
 
 Game.prototype.letsStart = function (){
-
-
-  
+ 
   let minSupport = 4;
 
   //creación objetos alien (pintar y despintar)
@@ -33,8 +31,8 @@ Game.prototype.letsStart = function (){
 
     
   // empieza a mover los elementos de colision
-  timeinterval()
-  timeintervalSuppo()
+  checkRadio()
+  
 
 }
 

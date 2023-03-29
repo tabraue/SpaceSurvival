@@ -90,10 +90,10 @@ function moveSupporters(j, i) {
 }
 
 
-function timeintervalSuppo() {
+function timeintervalSuppo(speed) {
     timeInSuppo = setInterval(function() {
         intervalmoveSuppo();
-    }, 600);
+    }, speed+300);
 }
 
 

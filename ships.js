@@ -76,8 +76,38 @@ function moveSpaceShip(j, i) {
 
 }
 
-function timeinterval() {
-    timein = setInterval(intervalmove, 100);
+let flag2 = false
+
+function checkRadio(flag2){
+    
+    if(flag2){
+    
+        let easy = document.getElementById("easy").checked;
+        let medium = document.getElementById("medium").checked;
+        let high = document.getElementById("high").checked;
+        console.log(easy,medium,high)
+        let speed;
+        
+        if(easy)
+            speed = 150;
+        else if(medium)
+            speed = 50;
+        else if(high)
+            speed = 35;
+
+        timeinterval(speed)
+        timeintervalSuppo(speed)   
+        }
+}
+
+
+
+
+function timeinterval(speed) {
+    //let speed = dameSpeed();
+    console.log(speed)
+    timein = setInterval(intervalmove, speed);
+    
 }
 
 
@@ -85,10 +115,11 @@ function timeinterval() {
 // es una nave que tiene un numero determinado de celdas. Al llamar a moveSpaceShip en cada
 // vuelta de bucle hace que se muevan las naves. En realidad pinta y "despinta" la celda de
 // la derecha y crea el efecto de movimiento. 
-function intervalmove() {
+function intervalmove(speed) {
     for (let j = 0; j < arrships.length; j++) {
         for (let i = 0; i < arrships[j].spaceShip.length; i++) {
             time = setTimeout(moveSpaceShip, 10, j, i)
         }
     }
 }
+
