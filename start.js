@@ -11,6 +11,7 @@ let audioWinner = new Audio('/music/winner.mp3')
 let audioStop = true;
 let audiotimergameover;
 let audiotimerwin;
+let isMuted = false;
 
 let mute = document.getElementsByClassName("mute")[0]
 mute.addEventListener("click", stopMusic);
@@ -18,16 +19,16 @@ mute.addEventListener("click", stopMusic);
 
 function stopMusic() {
     if(audioStop){
-    audio1.pause()
-    audioStop = false;
+        audio1.pause()
+        audioStop = false;
     }else{
         audio1.play()
         audioStop = true;
     }
   if (isMuted === true) {
-    mute.innerText = "🔈"
+        mute.innerText = "🔈"
 
-    isMuted = false
+        isMuted = false
   } else {
      mute.innerText = "🔇"
 

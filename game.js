@@ -16,11 +16,11 @@ function Game() {
 
 
     //creamos los cometas en la zona de support
-    drawAllSupports(1, 2, minSupport)
-    minSupport++
-    drawAllSupports(2, 1, minSupport)
-     minSupport++
     drawAllSupports(2, 2, minSupport)
+    minSupport++
+    drawAllSupports(3, 1, minSupport)
+     minSupport++
+    drawAllSupports(3, 2, minSupport)
      minSupport++
     drawAllSupports(2, 3, minSupport)
 

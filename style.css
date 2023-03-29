@@ -45,6 +45,10 @@ table {
     background-size: cover;
 }
 
+#puerta{
+    background-image: url("/img/blackhole.gif");
+    background-size: cover;
+}
 
 tr {
     background-color: transparent;
@@ -251,6 +255,11 @@ td {
     top: 10px;
     width: 50px;
     justify-content: center;
-    border-radius: 20px;
+    border: none;
+}
+
+.mute:hover{
+    border: 3px solid #da5af0;
+    border-radius: 10px;
 }
 

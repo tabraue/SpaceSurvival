@@ -43,7 +43,7 @@ Alien.prototype.moveAlien = function(move){
         break;
         case "ArrowUp":
             if(alien.y === 1){
-                if(alien.x === 4 || alien.x === 9 || alien.x === 14){
+                if(alien.x === 4 || alien.x === 14){
                     notalien.y = alien.y;
                     notalien.x = alien.x;
                     notalien.clearAlien()

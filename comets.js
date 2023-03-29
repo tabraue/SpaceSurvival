@@ -93,7 +93,7 @@ function moveSupporters(j, i) {
 function timeintervalSuppo() {
     timeInSuppo = setInterval(function() {
         intervalmoveSuppo();
-    }, 100);
+    }, 600);
 }
 
 
