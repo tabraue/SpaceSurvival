@@ -1,5 +1,5 @@
 // Constantes limites B L & R
-const limitBottom = document.querySelectorAll('.body>tr').length; // limite abajo == 16
+const limitBottom = 16;//document.querySelectorAll('.body>tr').length; // limite abajo == 16
 const limitLeft = 1; // limite izq == 1
 const limitRight = document.querySelectorAll('.row1>td').length; // limite dcha == 17
 
@@ -32,6 +32,7 @@ window.addEventListener('keydown', function (event) {
 ////////////////////////
 // T I M E R
 
+/*
 let countDown; 
 var timeLeft = 20;
 let thetimer = document.getElementById("timer")
@@ -55,3 +56,4 @@ function startTimer() {
   countDown = setInterval(updateTimer, 1000);
   updateTimer();
 }
+*/
