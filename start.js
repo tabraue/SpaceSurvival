@@ -1,5 +1,4 @@
-
-// M U S I C ** *************
+// M U S I C  ***
 
 //audio de bso
 let audio1 = new Audio('/music/BSO.mp3')

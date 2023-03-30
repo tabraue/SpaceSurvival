@@ -89,6 +89,7 @@ function NotAlien(x,y){
 
 //busca la celda que deja atrás el alien y la "despinta" ** tiene en cuenta la posibilidad de la ultima celda
 // para que no de fallo
+
 NotAlien.prototype.clearAlien = function(isLastCell) {
     let emptyCell = document.querySelector(`.row${this.y} .col${this.x}`)
    try{

@@ -129,17 +129,3 @@ function checkaliencolision(){
         }
     }
 }
-
-
-
-
-/*
-function drawblackholes(){
-
-    blackhole = document.querySelector('.row1' + ' .col1')
-    console.log(blackhole)
-    blackhole.classList.remove('td')
-    blackhole.classList.add('blackhole')
-
-}
-*/

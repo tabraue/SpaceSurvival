@@ -25,10 +25,9 @@ function drawSpaceShip(qty) {
     for (let i = 0; i < qty; i++) {
 
         if (spaceShip.length == 0) {
-            //de forma random escoge una columna entre la 1 y 17
             collisionCol = Math.floor(Math.random() * ((17 - 1) + 1) + 1);
             if (collisionCol <= 4) {
-                collisionCol += 4
+                collisionCol += 4;
             }
             collisionRow = minShip;
             minShip++;
@@ -42,8 +41,8 @@ function drawSpaceShip(qty) {
             cellSpaceShip = new CellShip(colFirstCell, rowFirstCell)
         }
 
-        cellSpaceShip.drawCell()
-        spaceShip.push(cellSpaceShip)
+        cellSpaceShip.drawCell();
+        spaceShip.push(cellSpaceShip);
     }
 
     arrships.push(new MotherShip(spaceShip))
@@ -69,9 +68,9 @@ function moveSpaceShip(j, i) {
     }
     arrships[j].spaceShip[i] = cell;
 
-    //  controla colision
+
     if (cell.x == alien.x && cell.y == alien.y) {
-        gameOver()   
+        gameOver();
     }
 
 }
@@ -85,7 +84,6 @@ function checkRadio(flag2){
         let easy = document.getElementById("easy").checked;
         let medium = document.getElementById("medium").checked;
         let high = document.getElementById("high").checked;
-        console.log(easy,medium,high)
         let speed;
         
         if(easy)
@@ -95,8 +93,8 @@ function checkRadio(flag2){
         else if(high)
             speed = 35;
 
-        timeinterval(speed)
-        timeintervalSuppo(speed)   
+        timeinterval(speed);
+        timeintervalSuppo(speed);
     }
 }
 
