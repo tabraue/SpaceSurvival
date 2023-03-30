@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
 }
+
 /*space ships from intro instructions*/
 .material-symbols-outlined {
     font-variation-settings:
@@ -12,12 +13,7 @@
         'opsz' 48
 }
 
-.instrucciones{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-}
+
 
 .juego {
     height: 100vh;
@@ -59,7 +55,7 @@ table {
     background-size: cover;
 }
 
-#puerta{
+#puerta {
     background-image: url("/img/blackhole.gif");
     background-size: cover;
 }
@@ -89,14 +85,15 @@ td {
     background-size: cover;
 }
 
-.blackhole{
+.blackhole {
     background-image: url("img/portal.gif");
 }
 
 .starter {
     height: 100%;
-    width: 100vh;
+    width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-repeat: no-repeat;
@@ -136,6 +133,9 @@ td {
     display: inline-block;
     position: relative;
     transition: 0.5s;
+    font-family: 'Press Start 2P', cursive;
+    margin-left: 70px;
+
 }
 
 .start-button::before {
@@ -151,6 +151,7 @@ td {
     border-radius: 10px;
     filter: blur(10px);
     animation: glowing 30s linear infinite;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .start-button:after {
@@ -160,25 +161,28 @@ td {
     top: 14px;
     right: -20px;
     transition: 0.5s;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .start-button:hover {
     padding-right: 24px;
     padding-left: 8px;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .start-button:hover:after {
     opacity: 1;
     right: 10px;
+    font-family: 'Press Start 2P', cursive;
 }
 
-.game-over{
+.game-over {
     background-image: url("./img/game-over.gif");
     background-size: contain;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     height: 100%;
-    width: 100vh;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -208,6 +212,38 @@ td {
     display: none;
 }
 
+.instrucciones {
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: transparent;
+    color: white;
+    text-shadow: 2px 2px #da5af0;
+    text-align: center;
+
+}
+
+legend {
+    padding-top: 15px;
+}
+
+p {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+#theway {
+    text-decoration: underline white;
+}
+
+fieldset {
+    border: 0 none;
+    padding: 15px;
+    text-align: center;
+}
+
 @keyframes glowing {
     0% {
         background-position: 0 0;
@@ -224,13 +260,10 @@ td {
 
 /* C O U N T D O W N   T I M E R */
 
-#clock{
-    display: flex;
-}
 
 #timer {
     display: flex;
-    align-self: flex-start;
+    align-self: flex-star;
     background-color: #000000;
     font-weight: bold;
     font-size: x-large;
@@ -240,12 +273,14 @@ td {
     padding-bottom: 10px;
     position: fixed;
     top: 10px;
-    height:5%;
-    width: 40vw;
+    height: 5%;
+    width: 780px;
     justify-content: center;
+    align-items: center;
+    margin-left: 35px;
 }
 
-#timer:before{
+#timer:before {
     display: flex;
     content: "";
     position: absolute;
@@ -259,7 +294,7 @@ td {
     border-radius: 10px;
     filter: blur(10px);
     animation: glowing 90s linear infinite;
-}    
+}
 
 /* M U T E  B U T T O N */
 
@@ -278,7 +313,7 @@ td {
     border: none;
 }
 
-.mute:hover{
+.mute:hover {
     border: 3px solid #da5af0;
     border-radius: 10px;
 }

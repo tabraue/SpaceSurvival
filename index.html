@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style.css">
     <script src="game.js" defer></script>
     <script src="start.js" defer></script>
@@ -18,34 +22,37 @@
     <title>Space Survival</title>
     <link rel="shortcut icon" href="./img/alienpiskel.gif">
 </head>
+
 <body>
     <div class="game-wrapper">
         <div class="starter">
             <div class="instrucciones">
-                <span class="material-symbols-outlined">rocket_launch</span>
-                COSMIC DISASTER DRILL
-                <span class="material-symbols-outlined">rocket_launch</span>
+
+                🚀 COSMIC DISASTER DRILL 🚀
+
                 <div class="instrucciones">
-                    <p>Use key arrows to control direction. Spacebar to jump after safe zone. This is the way.</p>
+                    <p>Use key arrows to control direction. </p>
+                    <p> Spacebar to jump after safe zone. </p>
+                    <p id="theway"> This is the way.</p>
                 </div>
             </div>
-            
+
 
             <fieldset class="instrucciones">
-                <button onclick="checkRadio(true)"  class="start-button">START</button>
                 <legend class="instrucciones">Select your difficulty</legend>
-                    <div>
-                        <input type="radio" id="easy" name="difficulty" value="easy" checked>
-                        <label for="easy">Easy</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="medium" name="difficulty" value="medium">
-                        <label for="medium">Medium</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="high" name="difficulty" value="high">
-                        <label for="high">High</label>
-                    </div>
+                <div>
+                    <input type="radio" id="easy" name="difficulty" value="easy" checked>
+                    <label for="easy">Easy</label>
+                </div>
+                <div>
+                    <input type="radio" id="medium" name="difficulty" value="medium">
+                    <label for="medium">Medium</label>
+                </div>
+                <div>
+                    <input type="radio" id="high" name="difficulty" value="high">
+                    <label for="high">High</label>
+                </div>
+                <button onclick="checkRadio(true)" class="start-button">START</button>
             </fieldset>
 
         </div>
@@ -70,7 +77,7 @@
                         <td class="col11 home"></td>
                         <td class="col12 home"></td>
                         <td class="col13 home"></td>
-                        <td class="col14 home"  id="puerta"></td>
+                        <td class="col14 home" id="puerta"></td>
                         <td class="col15 home"></td>
                         <td class="col16 home"></td>
                         <td class="col17 home"></td>
@@ -113,7 +120,7 @@
                         <td class="col16 home"></td>
                         <td class="col17 home"></td>
                     </tr>
-                </thead>   
+                </thead>
                 <tbody>
                     <tr class="row4">
                         <td class="col1 collision1"></td>

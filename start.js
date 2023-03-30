@@ -1,10 +1,10 @@
 
-// M U S I C **************************** 
+// M U S I C ** *************
 
 //audio de bso
 let audio1 = new Audio('/music/BSO.mp3')
 //audio de game over
-let audioGameOver = new Audio('/music/gameover.mp3')
+let audioGameOver = new Audio('./music/gameoveer.wav')
 //audio de winner
 let audioWinner = new Audio('/music/winner.mp3')
 
@@ -15,6 +15,7 @@ let isMuted = false;
 
 let mute = document.getElementsByClassName("mute")[0]
 mute.addEventListener("click", stopMusic);
+
 
 
 function stopMusic() {
@@ -68,7 +69,7 @@ function gameOver(){
   audioGameOver.play()
   let tryagain = setTimeout(function(){
     location.reload()
-  }, 5200);
+  }, 4800);
 
 
 }
