@@ -27,13 +27,13 @@ table {
 }
 
 .thead {
-    background-image: url("img/intercambiator\(1\).gif");
+    background-image: url("./img/intercambiator\(1\).gif");
     background-size: cover;
 }
 
 
 .goal {
-    background-image: url("img/intercambiator\(1\).gif");
+    background-image: url("./img/intercambiator\(1\).gif");
     background-size: cover
 }
 
@@ -42,7 +42,7 @@ table {
 }
 
 #safespace {
-    background-image: url("img/zonaSeguranebulosa1.png");
+    background-image: url("./img/zonaSeguranebulosa1.png");
     background-size: cover;
 }
 
@@ -56,7 +56,7 @@ table {
 }
 
 #puerta {
-    background-image: url("/img/blackhole.gif");
+    background-image: url("./img/blackhole.gif");
     background-size: cover;
 }
 
@@ -71,22 +71,22 @@ td {
 }
 
 .spaceSupporter {
-    background-image: url("img/cometawapo2.png");
+    background-image: url("./img/cometawapo2.png");
 }
 
 .allien {
-    background-image: url("img/alienpiskel.gif");
+    background-image: url("./img/alienpiskel.gif");
     background-repeat: no-repeat;
     align-items: center;
 }
 
 .spaceShip {
-    background-image: url("img/piedraschulas.png");
+    background-image: url("./img/piedraschulas.png");
     background-size: cover;
 }
 
 .blackhole {
-    background-image: url("img/portal.gif");
+    background-image: url("./img/portal.gif");
 }
 
 .starter {
@@ -98,7 +98,7 @@ td {
     justify-content: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("/img/fondopantalla.gif");
+    background-image: url("./img/fondopantalla.gif");
     background-color: black;
     position: absolute;
     z-index: 1;
@@ -109,7 +109,7 @@ td {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("img/fondopantalla.gif");
+    background-image: url("./img/fondopantalla.gif");
     background-size: cover;
 }
 
